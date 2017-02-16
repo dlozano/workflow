@@ -2,7 +2,8 @@ before_install:
   - sudo apt-get install -qq graphviz
 
 rvm:
-  - 2.0.0
+  - 2.4.0
+
 gemfile:
   - gemfiles/Gemfile.rails-edge
 
@@ -14,8 +15,22 @@ matrix:
     - rvm: 2.0.0
       gemfile: gemfiles/Gemfile.rails-3.x
 
-    - rvm: 2.0.0
-      gemfile: gemfiles/Gemfile.rails-4.0
-
     - rvm: 2.1.0
       gemfile: gemfiles/Gemfile.rails-3.x
+
+    - rvm: 2.2.0
+      gemfile: gemfiles/Gemfile.rails-3.x
+
+    - rvm: 2.3.0
+      gemfile: gemfiles/Gemfile.rails-3.x
+
+    - rvm: 2.4.0
+      gemfile: gemfiles/Gemfile.rails-4.0
+
+  allow_failures:
+    # not compatible
+    #
+    #  TypeError: Cannot visit Integer
+    - rvm: 2.4.0
+      gemfile: gemfiles/Gemfile.rails-3.x
+

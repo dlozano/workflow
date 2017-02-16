@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 group :development do
+  gem "test-unit", "~> 3.2.3"
   gem "rdoc", ">= 3.12"
   gem "bundler", ">= 1.0.0"
   gem "activerecord", "~>3.2"
